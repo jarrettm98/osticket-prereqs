@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 <h1>osTicket Installation and prerequisits</h1>
-This is a tutorial of how to set up and install the open-source help desk, osTicket. In the tutorial, I will be using Microsoft Azure to create a Virtual Machine. Users such as Admins and Agents will be able to sort and resolve tickets (Ones created by yourself of course). OsTicket is a helpful tool to learn how setup a help desk as well as use one to resolve client issues in a help desk. <br/>
+This is a tutorial of how to set up and install the open-source help desk, osTicket. Microsoft Azure will be the tool of choice to create a Virtual Machine, which will be used to set up the Help desk. Users such as Admins and Agents will be able to sort and resolve tickets (Ones created by yourself of course). OsTicket is a helpful tool to learn how setup a help desk as well as use one to resolve client issues in a help desk. <br/>
 <h2>Technology used in this project</h2>
 
 - HeidiSQL
@@ -43,13 +43,13 @@ This is a tutorial of how to set up and install the open-source help desk, osTic
 <h2>Step 1: Installation</h2>
 
 <p>
-We will first create a Virtual Machine in Azure. Using the IP address and login we set up with the Virtual Machine, We will connect through Remote Desktop Connection. You might get a popup about identity verification of the remote computer not being verified, go ahead and click "Yes" to connect remotely to the Virtual Machine. </p>
+First, create a Virtual Machine in Azure. Using the IP address and login that has been set up with the Virtual Machine, connect through Remote Desktop Connection. There might be a popup about identity verification of the remote computer not being verified, go ahead and click "Yes" to connect remotely to the Virtual Machine. </p>
 
 <p>
-When the VM starts up It will ask a few questions about privacy settings, just tick all of the boxes so they are disabled. As we continue with the prerequisits, use this link for all of the necessary links to download for this project. https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6</p>
+When the VM starts up It will ask a few questions about privacy settings, just tick all of the boxes so they are disabled. Use this link for all of the necessary links to download for this project. https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6</p>
 
 <p>
-Before we install anything from this list, we will install some IIS features. Go to Control Panel>Programs and Features> and click on "Turn Windows features on or off" Make sure the box for "Internet Information Services" is checked. Then expand IIS as well as "World Wide Web Services" and "Application Development Features" and check the box next to "CGI." Also expand "Common HTTP Features" and tick all of the boxes that are not already ticked. After all boxes mentioned above are checked, click "OK" then "Apply" to install features. 
+Before installing anything from this list, it's time to install some IIS features. Go to Control Panel > Programs and Features and click on "Turn Windows features on or off" Make sure the box for "Internet Information Services" is checked. Then expand IIS as well as "World Wide Web Services" and "Application Development Features" and check the box next to "CGI." Also expand "Common HTTP Features" and tick all of the boxes in the dropdown that are not already ticked. After all boxes mentioned above are checked, click "OK" then "Apply" to install features. 
 </p>
 
 ![IIS CGI](https://github.com/jarrettm98/osticket/assets/140662793/bd129eea-be91-4c33-8b7e-4a4f74ab44e5)
@@ -64,7 +64,7 @@ Before we install anything from this list, we will install some IIS features. Go
 
 </p>
 
-<p>After that is complete, it is time to install a few things. Go to the files linked above and install "PHPManagerForIIS" and "rewrite_amd64." Once those are installed create a folder on the C: Drive and name it "PHP." Download the php-7.3.8-nts-Win32-VC15-x86.zip file and extract the files in the "PHP" folder that was just created.</p>
+<p>After that is complete, it is time to install a few things. Go to the files linked above and install "PHPManagerForIIS" and "rewrite_amd64." Once those are installed, create a folder on the C: Drive and name it "PHP." Download the php-7.3.8-nts-Win32-VC15-x86.zip file and extract the files in the "PHP" folder that was just created.</p>
 <p>
 Now after all of the files are extracted, download and install "VC_redist.x86.exe" and "mysql-5.5.62-win32.msi". 
 </p>
@@ -80,10 +80,10 @@ After MySQL is finished installing, go to Windows Explorer and search for Intern
 ![IIS WINDOW](https://github.com/jarrettm98/osticket/assets/140662793/1253f608-f165-4403-b46e-c4264970d309)
 </p>
 <p>
-Now download osTicket from Installation Files Folder, Extract and copy the “upload” folder to C: > inetpub > wwwroot. In C:\inetpub\wwwroot, rename the “upload” folder to “osTicket”. To do this, open two separate File Explorer windows. On one, navigate to the Downloads folder and double click the "osTicket-v1.15.8" folder. There, you will find the "upload" folder. On the other window, click on Windows (C:) drive, locate the "inetpub" folder, open it, then open the "wwwroot" folder. Drag the "upload" folder into the wwwroot folder. Once the upload folder is extracted into the wwwroot folder, rename the upload folder to "osTicket."
+Now download osTicket from Installation Files Folder, Extract and copy the “upload” folder to C: > inetpub > wwwroot. In C:\inetpub\wwwroot, rename the “upload” folder to “osTicket”. To do this, open two separate File Explorer windows. On one, navigate to the Downloads folder and double click the "osTicket-v1.15.8" folder. There, you will find the "upload" folder. On the other window, click on Windows (C:) drive, locate the "inetpub" folder, open it, then open the "wwwroot" folder. Drag the "upload" folder into the wwwroot folder. Once the upload folder is dragged into the wwwroot folder, rename the upload folder to "osTicket."
 </p>
 <p>
-After the upload folder is extracted and renamed, go back to IIS and restart server. Now in IIS, expand VM-osTicket > Sites > Default Web Site > osTicket and click on Browse *:80 (http) (Should be under "Manage Folder" options on the right side of the window. This will take you to the osTicket Installer website for your help desk.
+After the upload folder is transferred and renamed, go back to IIS and restart server. Now in IIS, expand VM-osTicket > Sites > Default Web Site > osTicket and click on Browse *:80 (http) (Should be under "Manage Folder" options on the right side of the window. This will take you to the osTicket Installer website for your help desk.
 </p>
 <p>
 
@@ -97,16 +97,16 @@ After the upload folder is extracted and renamed, go back to IIS and restart ser
 
   
 <p>
-  There will be two more things to be done before we continue on the webpage. Find the "ost-sampleconfig" file in C:/ > inetpub > wwwroot > osTicket > include > ost-sampleconfig.php and rename it to "ost-config.php". Lastly, with the newly-named ost-config.php file, right-click it and go to properties > security tab > advanced. Click the "Disable Inheritance" button and "Remove all inherited permissions from this object." Click the "Add" button, then "Select a principle." In the text window write "Everyone" and Check names. Click OK and check the "Full control" button to give everyone Full control. Make sure to apply these changes.
+  There will be two more things to be done before continuing on the webpage. Find the "ost-sampleconfig" file in C:/ > inetpub > wwwroot > osTicket > include > ost-sampleconfig.php and rename it to "ost-config.php". Lastly, with the newly-named ost-config.php file, right-click it and go to properties > security tab > advanced. Click the "Disable Inheritance" button and "Remove all inherited permissions from this object." Click the "Add" button, then "Select a principle." In the text window write "Everyone" and Check names. Click OK and check the "Full control" button to give everyone Full control. Make sure to apply these changes.
 </p>
 <p>
-Finally, it is time to continue on the webpage by clicking the continue button at the bottom of the page. There will be some features still un-added but it will not matter for this tutorial. In the next page, there will be basic information for the help desk that will need to be filled out. The only real important information that needs to be remembered will be the login credentials. (Username and password) Make sure to write these down, because they will be used to administrate the help desk. Before installation, download HeidiSQL from the Installation Files above. When installing HeidiSQL make sure it Launches after install. When Heidi launches, click "New" in the bottom left corner. Input user and password from MySQL. (User should be root if it isn't already) Click the "Open" button. Then in the created database, right-click the "Unnamed" session and click "Create new" and then click "Database." Name the database "osTicket" and then click OK.
+Finally, it is time to continue on the webpage by clicking the continue button at the bottom of the page. There will be some features still un-added but it will not matter for this tutorial. In the next page, there will be basic information for the help desk that will need to be filled out. The only real important information that needs to be remembered will be the login credentials. (Username and password) Make sure to write these down, because they will be used to administrate the help desk. Before installation, download HeidiSQL from the Installation Files above. When installing HeidiSQL make sure it Launches after install. When Heidi launches, click "New" in the bottom left corner. Using the MySQL login credentials from before, input the user and password. (User should be "root" if it isn't already) Click the "Open" button. Then in the created database, right-click the "Unnamed" session and click "Create new" and then click "Database." Name the database "osTicket" and then click OK.
 </p>
 <p>
-Back on the webpage, Input "osTicket" in MySQL Database, "root" in MySQL Username, and your password for MySQL, then click "Install."
+Back on the webpage, Input "osTicket" in MySQL Database, "root" in MySQL Username, and the password for MySQL, then click "Install."
 </p>
 <p>
-The Help desk is now created, however, there is still a little cleanup left before. Go to the C: Drive >inetpub > wwwroot > osTicket. In the osTicket folder, delete the "Setup" folder. After deleting the setup folder, go to C: Drive >inetpub > wwwroot > osTicket > include and right-click on ost-config file. Go to Properties > Security Tab > Advanced. Click on the "Everyone" option in the list and click "Edit." Uncheck all of the boxes except for "Read" and "Read & execute." Apply the changes.
+The Help desk is now created. However, there is still a little cleanup left before continuing. Go to the C: Drive > inetpub > wwwroot > osTicket. In the osTicket folder, delete the "Setup" folder. After deleting the setup folder, go to C: Drive > inetpub > wwwroot > osTicket > include and right-click on ost-config file. Go to Properties > Security Tab > Advanced. Click on the "Everyone" option in the list and click "Edit." Uncheck all of the boxes except for "Read" and "Read & execute." Apply the changes.
 </p>
 <p>
 Congrats! You created your help desk! Now copy and paste the following URL in your browser: 
