@@ -25,7 +25,7 @@ This is a tutorial of how to set up and install the open-source help desk, osTic
 - rewrite_amd64
 - VC_redist.x86
 
-<h2>List of Steps</h2>
+<h2>Installation Steps</h2>
 
 - Create A Virtual Machine with Azure
 - Use Remote Desktop Protocol into your Windows 10 virtual machine
@@ -41,7 +41,7 @@ This is a tutorial of how to set up and install the open-source help desk, osTic
 - Download and install HeidiSQL
 - Continue to set up osTicket in the browser
 
-<h2>Step 1: Installation</h2>
+<h2>osTicket Installation</h2>
 
 <p>
 First, create a Virtual Machine in Azure. Using the IP address and login that has been set up with the Virtual Machine, connect through Remote Desktop Connection. There might be a popup about identity verification of the remote computer not being verified, go ahead and click "Yes" to connect remotely to the Virtual Machine. </p>
