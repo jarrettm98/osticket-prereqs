@@ -14,7 +14,18 @@ This is a tutorial of how to set up and install the open-source help desk, osTic
 <h2>Operating Systems Used</h2>
 
 - Windows 10 (21H2)
-<h2>List of Prerequisites</h2>
+
+<h2>Installation Files Used</h2>
+
+- HeidiSQL
+- mysql
+- osTicket
+- php
+- PHPManagerForIIS
+- rewrite_amd64
+- VC_redist.x86
+
+<h2>List of Steps</h2>
 
 - Create A Virtual Machine with Azure
 - Use Remote Desktop Protocol into your Windows 10 virtual machine
@@ -29,16 +40,6 @@ This is a tutorial of how to set up and install the open-source help desk, osTic
 - Install osTicket v1.15.8
 - Download and install HeidiSQL
 - Continue to set up osTicket in the browser
-
-<h2>Installation Files Used</h2>
-
-- HeidiSQL
-- mysql
-- osTicket
-- php
-- PHPManagerForIIS
-- rewrite_amd64
-- VC_redist.x86
 
 <h2>Step 1: Installation</h2>
 
